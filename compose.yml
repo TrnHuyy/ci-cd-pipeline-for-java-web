@@ -3,7 +3,7 @@ name: springboot-mysql-compose
 
 services:
   app:
-    container_name: khalid-springboot
+    container_name: huylele-springboot
     build:
       context: .
       dockerfile: ./Dockerfile2
@@ -18,7 +18,7 @@ services:
       - java-app
 
   mysql:
-    container_name: khalid-java-mysql
+    container_name: huylele-java-mysql
     image: "mysql:8.0"
     environment:
       MYSQL_ROOT_PASSWORD: password123_DONG
@@ -32,12 +32,12 @@ services:
       retries: 3
       start_period: 30s
     volumes:
-      - khalid-java-mysql-data:/var/lib/mysql
+      - huylele-java-mysql-data:/var/lib/mysql
     networks:
       - java-app
 
 volumes:
-  khalid-java-mysql-data:
+  huylele-java-mysql-data:
 networks:
   java-app:
     name: java-app
